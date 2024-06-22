@@ -1,39 +1,40 @@
-<%- include("partials/header.ejs") %>
-
-<div class="anime-info">
-    title: <%= title %> <br>
-    <%= title_jp %> <br>
-    <img src="<%= title_img %>" alt="<%= title %>"> <br>
-    studio : 
-    <ul>
-        <% studio.forEach(studio => { %>
-             <li><a href="<%= studio.url %>" target="_blank"><%= studio.name %></a></li>
-        <%  }); %>
-    </ul>
-
-    type: <%= type %> <br>
-    rating: <%= rating %> <br>
-    MAL score: <%= score %> <br>
-    synopsis: <%= synopsis %> <br>
-    genre:
-    <ul>
-    <% genres.forEach(genre => { %>
-         <li><%= genre %></li>
-    <%  }); %>
-    </ul>
-    episodes: <%= episode %>
-    <br>
-    
-    <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-          <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-        </div>
-      </div>
+<%- include("partials/Header2.ejs") %>
 
 </div>
+<div class="anime-info ">
+  <div class=" ">
+    <img class="align-items-right" src="<%= title_lg_img %>" width="350px" alt="<%= title %>">
+  </div>
+  <div class="info mb-4">
+    <h1 class="featurette-heading primary-txt lh-1"><%= title %></h1> 
+    <span class="primary-txt "><%= title_jp %></span>
+    <p class="primary-txt mb-1 mt-1 ">Episodes : <%= episode %></p>
+    <p class="primary-txt mb-1">MAL score : <%= score %></p>
+    <p class="primary-txt mb-1">Rating : <%= rating %></p>
+    
+    <div class="studios d-flex align-items-center mb-1 primary-txt">
+    Studio :
+    <ul class="mb-0">
+    <% studio.forEach(studio => { %>
+       <li class="mx-2 align-items-center primary-txt"><a href="<%= studio.url %>" target="_blank"> <%= studio.name %></a></li>
+    <%  }); %>
+    </ul>
+    </div>
 
+
+
+    <ul class="d-flex mb-1">
+      <% genres.forEach(genre => { %>
+           <li><span class="badge bg-primary-subtle primary-txt-pill rounded-pill"><%= genre %></span></li>
+      <%  }); %>
+    </ul>
+    <p class="primary-txt mb-1 mt-2">Synopsis: </p>
+
+    <p class="primary-txt"><%= synopsis %></p>
+  </div>
+  
+
+
+
+</div>
 <%- include("partials/footer.ejs") %>

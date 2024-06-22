@@ -21,9 +21,12 @@ app.get("/random", async (req, res) => {
         const studios = show.studios.map(studio => ({name: studio.name, url: studio.url}));
         
         res.render("random.ejs", {
+            id: show.mal_id,            
             title: show.title,
             title_jp: show.title_japanese,
             title_img : show.images.webp.large_image_url,
+            title_lg_img : show.images.webp.large_image_url,
+            title_sm_img : show.images.webp.small_image_url,
             type : show.type,
             rating : show.rating,
             synopsis : show.synopsis,

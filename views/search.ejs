@@ -1,4 +1,6 @@
-<%- include("partials/header.ejs") %>
+<%- include("partials/Header.ejs") %>
+
+<div class="search-info row">
 <h1 class="primary-txt">
     Search Results
 </h1>
@@ -6,17 +8,20 @@
 <% if (animeList.length === 0) {%>
     <p>no anime found</p>
 <% } else { %>
-    <div class="anime-results d-flex">
+    <div class="anime-results d-flex flex-wrap">
+        
         <% animeList.forEach(show => { %>
-            <a href="/anime/<%= show.id %>"><p><%=show.title%></p></a>
-            <img src=" <%= show.title_img %>" width="100px">
+            <div class="d-flex anime-card">
+                
+                <a href="/anime/<%= show.id %>"><img class="titleImg" src=" <%= show.title_img %>"></a>
+
+            </div>
             <%=console.log(show.id)%>
+            
 
         <% })}; %>
+        
     </div>
 
-<div class="anime-card">
-
 </div>
-
-<%- include("partials/footerfixed.ejs") %>
+<%- include("partials/footer.ejs") %>

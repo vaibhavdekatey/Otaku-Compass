@@ -1,9 +1,20 @@
 :root{
     --txt-color: white;
+    --std-margin: 14vh 16vw 10vh 16vw;
+    --bdr-color-anime: rgb(0, 31, 56);
 }
 
-body{
+body.animeImg{ 
     background-color: #001f38;
+}
+
+body.clr {
+    background-color: #001f38;
+}
+
+body.startIMG {
+    background: linear-gradient(rgba(0, 31, 56, 0.7), rgba(0, 31, 56, 0.7)), url('../images/background.jpg') ;
+    background-size: cover;
 }
 
 .random-button {
@@ -13,20 +24,67 @@ body{
     color: white;
 }
 
+.random {
+    background-color: var(--bdr-color-anime);
+    transition: 50ms;
+}
+
+.random:hover {
+    color: white;
+    background-color: var(--bdr-color-anime);
+    box-shadow: 6px 6px white;
+    transition: 50ms ease-in-out;
+}
+
+/* search results */
+.search-info {
+    display: flex;
+    color: var(--txt-color);
+    margin: 8vh 16vw 10vh 16vw;
+}
+
+.titleImg {
+    width: 180px;
+    height: 258px;
+    border-radius: 8px;
+    will-change: transform;
+    transition: transform 450ms ;
+}
+
+.titleImg:hover {
+    transition: transform 125ms;
+    transform: translateY(-10px);
+}
+
+/* anime card */
+
+.anime-card {
+    margin: 12px 24px 12px 0px;
+}
+
+
+/* anime */
+
 .anime-info {
     display: flex;
     color: var(--txt-color);
-    margin: 10vh 16vw 10vh 16vw;
+    margin: var(--std-margin);
 }
 
 .info {
-    padding-left: 3vw;
+    padding-left: 4vw;
+    margin-top: 0vh;
 }
 
 .anime-info img {
     justify-content: right;
+    height: 494px;
+    border-radius: 12px;
+    border: var(--bdr-color-anime) solid 5px;
     /* max-width: 50%; */
 }
+
+
 
 .anime-info ul {
     list-style-type: none;
