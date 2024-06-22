@@ -12,6 +12,12 @@ body.clr {
     background-color: #001f38;
 }
 
+.random-txt{
+    font-size: 3vh;
+    margin-bottom: 1%;
+
+} 
+
 body.startIMG {
     background: linear-gradient(rgba(0, 31, 56, 0.7), rgba(0, 31, 56, 0.7)), url('../images/background.jpg') ;
     background-size: cover;
@@ -23,11 +29,13 @@ body.startIMG {
     margin-bottom: 36vh;
     font-family:"Sometype Mono";
     color: white;
+    
 }
 
 .random {
     background-color: var(--bdr-color-anime);
     transition: 50ms;
+    font-size: 2vh;
 }
 
 .random:hover {
@@ -46,7 +54,7 @@ body.startIMG {
 
 .titleImg {
     width: 180px;
-    height: 258px;
+    height: 257px ;/* 1.43*/ 
     border-radius: 8px;
     will-change: transform;
     transition: transform 450ms ;
@@ -60,7 +68,7 @@ body.startIMG {
 /* anime card */
 
 .anime-card {
-    margin: 12px 24px 12px 0px;
+    margin: 12px 24px 13px 0px;
 }
 
 
