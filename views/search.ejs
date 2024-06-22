@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<h1 class="primary-txt">
+    Search Results
+</h1>
+
+<% if (animeList.length === 0) {%>
+    <p>no anime found</p>
+<% } else { %>
+    <div class="anime-results d-flex">
+        <% animeList.forEach(show => { %>
+            <a href="/anime/<%= show.id %>"><p><%=show.title%></p></a>
+            <img src=" <%= show.title_img %>" width="100px">
+            <%=console.log(show.id)%>
+
+        <% })}; %>
+    </div>
+
+<div class="anime-card">
+
+</div>
+
+<%- include("partials/footerfixed.ejs") %>

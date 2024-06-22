@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+<div class="anime-info d-flex justify-content-between">
+        <div class=" ">
+          <img class="align-items-right" src="<%= title_lg_img %>" width="450px" alt="<%= title %>">
+        </div>
+        <div class="info mt-5 mb-4">
+          <h1 class="featurette-heading primary-txt lh-1"><%= title %></h1> 
+          <span class="primary-txt "><%= title_jp %></span>
+          <p class="primary-txt mb-1 mt-1 ">Episodes : <%= episode %></p>
+          <p class="primary-txt mb-1">MAL score : <%= score %></p>
+          <p class="primary-txt mb-1">Rating : <%= rating %></p>
+          
+          <div class="studios d-flex align-items-center mb-1 primary-txt">
+          Studio :
+          <ul class="mb-0">
+          <% studio.forEach(studio => { %>
+             <li class="mx-2 align-items-center primary-txt"><a href="<%= studio.url %>" target="_blank"> <%= studio.name %></a></li>
+          <%  }); %>
+          </ul>
+          </div>
+
+
+
+          <ul class="d-flex mb-1">
+            <% genres.forEach(genre => { %>
+                 <li><span class="badge bg-primary-subtle primary-txt-pill rounded-pill"><%= genre %></span></li>
+            <%  }); %>
+          </ul>
+          <p class="primary-txt mb-1 mt-2">Synopsis: </p>
+
+          <p class="primary-txt"><%= synopsis %></p>
+        </div>
+        
+
+    
+
+</div>
+
+<%- include("partials/footer.ejs") %>

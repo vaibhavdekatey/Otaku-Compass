@@ -1,0 +1,54 @@
+:root{
+    --txt-color: white;
+}
+
+body{
+    background-color: #001f38;
+}
+
+.random-button {
+    margin-top: 36vh;
+    margin-bottom: 36vh;
+    font-family:"Sometype Mono";
+    color: white;
+}
+
+.anime-info {
+    display: flex;
+    color: var(--txt-color);
+    margin: 10vh 16vw 10vh 16vw;
+}
+
+.info {
+    padding-left: 3vw;
+}
+
+.anime-info img {
+    justify-content: right;
+    /* max-width: 50%; */
+}
+
+.anime-info ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.anime-info li {
+    padding-right: 10px;
+}
+
+.primary-txt-pill {
+    font-family: "Sometype Mono";
+    color: rgb(53, 53, 53)
+}
+
+
+.primary-txt {
+    font-family: "Sometype Mono";
+    color: var(--txt-color);
+}
+
+.divison {
+    color: #7fffd4;
+}
