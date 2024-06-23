@@ -39,3 +39,8 @@ To deploy this project run
 - Search for anime by title.
 - View random anime.
 - View detailed information about specific anime titles.
+
+
+## Contributing
+
+Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests.
