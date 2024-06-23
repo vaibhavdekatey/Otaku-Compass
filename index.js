@@ -9,13 +9,18 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
+const axiosInstance = axios.create({
+    baseURL: 'https://api.jikan.moe/v4',
+    timeout: 15000, // Set timeout to 15 seconds
+});
+
 app.get("/", (req,res) => {
     res.render("index.ejs")
 })
 
 app.get("/random", async (req, res) => {
     try {
-        const result = await axios.get("https://api.jikan.moe/v4/random/anime?sfw");
+        const result = await axiosInstance.get("https://api.jikan.moe/v4/random/anime?sfw");
         const show = result.data.data;
         const genres = show.genres.map(genre => genre.name);
         const studios = show.studios.map(studio => ({name: studio.name, url: studio.url}));
@@ -40,6 +45,7 @@ app.get("/random", async (req, res) => {
         });
     } catch (error) {
         // console.log()
+        console.error("Error fetching random anime:", error);
         res.status(500).send("Internal Server Error");
     }
     
@@ -52,7 +58,7 @@ app.get("/search", async (req, res)=> {
     }
 
     try{
-        const result = await axios.get(`https://api.jikan.moe/v4/anime/?q=${encodeURIComponent(query)}`);
+        const result = await axiosInstance.get(`https://api.jikan.moe/v4/anime/?q=${encodeURIComponent(query)}`);
         if (result.data.data.length === 0) {
             return res.status(404).send("No Anime Found")
         }
@@ -78,6 +84,7 @@ app.get("/search", async (req, res)=> {
 
     } catch (error) {
         // console.log()
+        console.error("Error searching for anime:", error);
         res.status(500).send("Internal Server Error");
     }
 
@@ -87,7 +94,7 @@ app.get("/anime/:id", async (req, res)=> {
     const animeID = req.params.id;
 
     try{
-        const result = await axios.get(`https://api.jikan.moe/v4/anime/${animeID}`);
+        const result = await axiosInstance.get(`https://api.jikan.moe/v4/anime/${animeID}`);
         const show = result.data.data;
         const genres = show.genres.map(genre => genre.name);
         const studios = show.studios.map(studio => ({name: studio.name, url: studio.url}));
@@ -113,6 +120,7 @@ app.get("/anime/:id", async (req, res)=> {
 
     } catch (error) {
         // console.log()
+        console.error("Error fetching anime by id:", error);
         res.status(500).send("Internal Server Error");
     }
 
