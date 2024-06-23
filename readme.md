@@ -15,7 +15,7 @@ This is a web application built with Node.js, Express, and EJS that allows users
 
 1. Clone the repository:
 ```bash
-  npm run deploy
+  git clone https://github.com/vaibhavdekatey/Otaku-Compass.git
 ```
 2. Navigate to project directory: 
 
