@@ -80,7 +80,7 @@ app.get("/search", async (req, res)=> {
             studios : show.studios.map(studio => ({name: studio.name, url: studio.url})),
         }));
         
-        res.render("search.ejs", { animeList: animeList });
+        res.render("search.ejs", { animeList: animeList , query: query});
 
     } catch (error) {
         // console.log()

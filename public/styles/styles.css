@@ -49,7 +49,7 @@ body.startIMG {
 .search-info {
     display: flex;
     color: var(--txt-color);
-    margin: 8vh 16vw 10vh 16vw;
+    margin: 5vh 16vw 10vh 16vw;
 }
 
 .titleImg {
@@ -61,14 +61,16 @@ body.startIMG {
 }
 
 .titleImg:hover {
-    transition: transform 125ms;
+    transition: transform 125ms ease-in-out;
     transform: translateY(-10px);
+    box-shadow: -6px 6px rgb(57, 106, 161);
+
 }
 
 /* anime card */
 
 .anime-card {
-    margin: 12px 24px 13px 0px;
+    margin: 12px;
 }
 
 
@@ -78,6 +80,7 @@ body.startIMG {
     display: flex;
     color: var(--txt-color);
     margin: var(--std-margin);
+    min-height: 62vh;
 }
 
 .info {
@@ -118,4 +121,8 @@ body.startIMG {
 
 .divison {
     color: #7fffd4;
+}
+
+footer {
+    bottom: 0;
 }

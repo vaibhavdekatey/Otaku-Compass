@@ -1,14 +1,14 @@
 <%- include("partials/Header.ejs") %>
 
 <div class="search-info row">
-<h1 class="primary-txt mt-1">
-    Search Results
+<h1 class="primary-txt mt-0">
+    Search Results for "<%= query  %>"
 </h1>
-
+<hr/>
 <% if (animeList.length === 0) {%>
     <p>no anime found</p>
 <% } else { %>
-    <div class="anime-results d-flex flex-wrap">
+    <div class="anime-results d-flex flex-wrap justify-content-center">
         
         <% animeList.forEach(show => { %>
             <div class="d-flex anime-card">
